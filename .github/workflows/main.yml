@@ -17,7 +17,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@main
 
     - name: Pull Docker Images and Package
       id: package_image
@@ -38,7 +38,7 @@ jobs:
         echo "所有镜像已保存到: $output_file"
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@main
       with:
         name: ${{ steps.package_image.outputs.output_file }}
         path: ${{ steps.package_image.outputs.output_file }}
